@@ -1,5 +1,6 @@
 # Mapty
 
+![Alt](https://github.com/islam-solaiman/Mapty/blob/main/mapty.png?raw=true)
 
 Mapty is a map application made with Vanilla JavaScript to store workouts like running and cycling.
 
