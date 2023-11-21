@@ -106,7 +106,7 @@ class App {
     _loadMap (position) {
         const { latitude } = position.coords;
         const { longitude } = position.coords;
-        console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
+        // console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
 
         const coords = [latitude, longitude];
 
@@ -286,7 +286,7 @@ class App {
         const workout = this.#workout.find(
             work => work.id === workoutEl.dataset.id
         );
-        console.log(workout);
+        // console.log(workout);
 
         this.#map.setView(workout.coords, this.#mapZoomLevel, {
             animate: true,
@@ -294,7 +294,7 @@ class App {
                 duration: 1,
             },
         });
-    workout.click();
+    // workout.click();
     }
     _setLocaStorage() {
         localStorage.setItem('workout', JSON.stringify(this.#workout))
@@ -302,7 +302,7 @@ class App {
 
     _getLocalStorage() {
         const data = JSON.parse(localStorage.getItem('workout'));
-        console.log(data);
+        // console.log(data);
 
         if (!data) return;
 
@@ -310,6 +310,11 @@ class App {
         this.#workout.forEach(work => {
             this._renderWorkout(work);
         });
+    }
+
+    reset() {
+        localStorage.removeItem('workout');
+        location.reload();
     }
 }
 
